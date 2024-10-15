@@ -1,0 +1,35 @@
+.home-container {
+  height: calc(100vh - 60px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-content {
+  background-color: #000;
+  border-radius: 5px;
+
+  padding: 20px 40px;
+}
+.home-title {
+  font-size: 35px;
+  color: #ddd;
+}
+.home-button {
+  width: 100%;
+  padding: 10px 20px;
+}
+.home-button {
+  background-color: #1d3637;
+  font-weight: 400 !important;
+  font-size: 15px;
+  text-transform: none;
+  padding: 10px 20px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-button:hover {
+  background-color: #295456;
+}

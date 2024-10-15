@@ -1,0 +1,76 @@
+* {
+  font-family: "Poppins" !important;
+}
+#root {
+  min-width: 98vw;
+}
+.inner-verify {
+  background-color: #000;
+}
+.otp-inp {
+  min-width: unset !important;
+  width: 40px;
+  height: 40px;
+  background-color: #181d21 !important;
+  text-align: center;
+}
+.otp-inputs {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.verify-header {
+  height: fit-content;
+}
+.verify-header h1 {
+  font-size: 25px;
+  margin: 0;
+  color: #ddd;
+}
+.verify-header p {
+  font-size: 13px;
+  margin: 0;
+}
+#otp-form {
+  width: 100%;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+.verify-form {
+  width: 98vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+}
+.inner-verify {
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
+.otp-inp {
+  background-color: #012d9210;
+}
+.submit-btn {
+  background-color: #1d3637;
+  font-weight: 400 !important;
+  font-size: 15px;
+  text-transform: none;
+  padding: 10px 20px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.submit-btn:hover {
+  background-color: #295456;
+}
+.resend-link {
+  cursor: pointer;
+}

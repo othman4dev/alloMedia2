@@ -1,0 +1,33 @@
+.login-form {
+  background-color: #181d21 !important;
+  height: calc(100vh - 60px);
+}
+.inner-form {
+  background-color: #000;
+  padding: 20px 40px;
+}
+.remember-me {
+  display: flex;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: row !important;
+  padding: 0 !important;
+}
+.login-btn {
+  background-color: #1d3637;
+  font-weight: 400 !important;
+  font-size: 15px;
+  text-transform: none;
+  padding: 10px 20px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-btn:hover {
+  background-color: #295456;
+}
