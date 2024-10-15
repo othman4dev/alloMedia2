@@ -95,9 +95,7 @@ const loginUser = async (req, res) => {
     }
 
     if (!user || !(await user.matchPassword(password))) {
-      return res
-        .status(400)
-        .json({ message: "Invalid email or password test" });
+      return res.status(400).json({ message: "Invalid email or password" });
     }
 
     // If there's a valid token, skip OTP step

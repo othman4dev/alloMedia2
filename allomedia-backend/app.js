@@ -5,7 +5,7 @@ const app = express();
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-//Routes :
+// Routes
 const authRoutes = require("./routes/authRoutes");
 
 // Middleware to parse incoming JSON requests
@@ -33,33 +33,28 @@ app.use(
   })
 );
 
-// Connect to MongoDB
-mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.error("MongoDB connection error:", err));
+const mongoUri = "mongodb://mongo:27017/allomedia";
 
-// Start the server
+// Function to connect to MongoDB and start the server
+const startServer = async () => {
+  try {
+    await mongoose.connect(mongoUri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("Connected to MongoDB");
+
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  } catch (err) {
+    console.error("MongoDB connection error:", err);
+  }
+};
+
+// Start the server if not in test environment
 if (process.env.NODE_ENV !== "test") {
-  const startServer = async () => {
-    try {
-      await mongoose.connect(process.env.MONGO_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      });
-      console.log("Connected to MongoDB");
-      const PORT = process.env.PORT || 5000;
-      app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`);
-      });
-    } catch (err) {
-      console.error("MongoDB connection error:", err);
-    }
-  };
-
   startServer();
 }
 
